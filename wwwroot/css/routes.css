@@ -1,0 +1,38 @@
+#map-container {
+    height: 80vh;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+  }
+  #route-list {
+    height: 80vh;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  .route-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .route-item:hover {
+    background-color: #f0f8ff;
+  }
+
+  .leaflet-popup-content {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .leaflet-popup-content-wrapper {
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  .leaflet-container a {
+    color: #007bff;
+  }
