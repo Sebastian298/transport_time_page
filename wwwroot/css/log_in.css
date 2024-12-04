@@ -1,0 +1,60 @@
+body {
+  padding-top: 70px;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center; /* Centra las imágenes */
+  align-items: center;
+  height: 80vh; /* Altura para centrar en la página */
+  gap: 40px; /* Espacio entre las imágenes */
+}
+
+.driver-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer; /* Cambia el cursor al estilo clic */
+}
+
+.image-circle {
+  width: 250px; /* Aumentar tamaño */
+  height: 250px; /* Aumentar tamaño */
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-circle:hover {
+  transform: scale(1.1); /* Efecto de zoom */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.image-text {
+  margin-top: 10px; /* Espacio entre imagen y texto */
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: black; /* Cambia el color del texto si es necesario */
+}
+
+.image-choferes {
+  background-image: url('/wwwroot/assets/img/chofer_icon.jfif'); /* Ruta de la imagen para Choferes */
+}
+
+.image-alumnos {
+  background-image: url('/wwwroot/assets/img/estudiante_logo.png'); /* Ruta de la imagen para Alumnos */
+}
+
+.hidden{
+  display: none !important;
+}

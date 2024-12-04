@@ -1,0 +1,13 @@
+.navbar {
+    padding: 1rem 2rem; /* Ajustar el ancho del navbar */
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.2rem; /* Aumentar tamaño de las letras */
+    font-weight: bold; /* Negritas */
+    text-transform: uppercase; /* Opcional: convertir en mayúsculas */
+}
+
+.navbar-brand img {
+    height: 50px; /* Ajusta el tamaño del logo */
+}
