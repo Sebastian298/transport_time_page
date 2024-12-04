@@ -9,6 +9,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const container = document.getElementById("driver-container");
     container.classList.toggle("hidden");
   });
+  document.getElementById("imgStudent").addEventListener("click", () => {
+    document.getElementById("profile-container").style.display = "none";
+    const container = document.getElementById("student-container");
+    container.classList.toggle("hidden");
+  });
   document
     .getElementById("assignRouteButton")
     .addEventListener("click", async () => {
@@ -42,6 +47,34 @@ document.addEventListener("DOMContentLoaded", async () => {
         buttonText.textContent = "Asignar Ruta";
         buttonSpinner.classList.add("d-none");
         document.getElementById("assignRouteButton").disabled = false;
+      }
+    });
+
+    document.getElementById("loginButton").addEventListener("click", async () => {
+      const buttonText = document.getElementById("buttonTextStudent");
+      const buttonSpinner = document.getElementById("buttonSpinnerStudent");
+
+      try {
+        // Mostrar el spinner y deshabilitar el botón
+        buttonText.textContent = "Iniciando sesión...";
+        buttonSpinner.classList.remove("d-none");
+        document.getElementById("loginButton").disabled = true;
+
+        // Llamar a la función asíncrona
+        await validateLogIn();
+      } catch (error) {
+        console.error(error);
+        Swal.fire({
+            title: "Error!",
+            text: "Ocurrió un error inesperado",
+            icon: "error",
+            confirmButtonText: "Ok",
+        });
+      } finally {
+        // Ocultar el spinner y habilitar el botón nuevamente
+        buttonText.textContent = "Iniciar Sesión";
+        buttonSpinner.classList.add("d-none");
+        document.getElementById("loginButton").disabled = false;
       }
     });
 });
@@ -113,3 +146,38 @@ const assignRouteToTruck = async () => {
     });
   }
 };
+
+const validateLogIn = async () => {
+  const url = "https://localhost:7048/Transport/GetLogInUsers";
+
+  const matricula = document.getElementById("input-matricula").value;
+  const password = document.getElementById("input-password").value;
+
+  if (matricula === "" || password === "") {
+    Swal.fire({
+      title: "Error!",
+      text: "Debe ingresar su matricula y contraseña",
+      icon: "error",
+      confirmButtonText: "Ok",
+    });
+    return;
+  }
+
+  const data = {
+    matricula,
+    password
+  };
+  const response = await httpService.post(url, data);
+  const { statusCode, content, innerException } = response;
+  if(content){
+    setLocalStorage("session", content);
+    window.location.href = "/index.html"; 
+  }else{
+    Swal.fire({
+      title: "Error!",
+      text: 'Verifique sus credenciales',
+      icon: "error",
+      confirmButtonText: "Ok",
+    });
+  }
+}
