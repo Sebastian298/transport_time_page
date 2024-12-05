@@ -11,3 +11,22 @@
 .navbar-brand img {
     height: 50px; /* Ajusta el tamaño del logo */
 }
+
+/* Estilo del ícono */
+.user-icon {
+    cursor: pointer;
+}
+
+/* Botón de cerrar sesión (oculto por defecto) */
+.logout-button {
+    position: absolute;
+    top: 50px; /* Posición debajo del ícono */
+    right: 0;
+    display: none; /* Oculto inicialmente */
+    z-index: 1000;
+}
+
+/* Mostrar el botón al hacer hover en el ícono */
+.user-icon:hover .logout-button {
+    display: block;
+}
