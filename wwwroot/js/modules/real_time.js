@@ -241,6 +241,7 @@ const animateTruckSegments = async (routeId, points) => {
   
     // Eliminar la ruta de la API y del localStorage
     await handleRouteCompletion(routeId, routeSettings.truckId);
+    document.getElementById("route-select").innerHTML = "";
     $('#route-select').select2('destroy');
     await getAssignedRoutesAsync();
 };
