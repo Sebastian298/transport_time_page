@@ -87,7 +87,7 @@ const validateAccessToPage = () => {
 };
 
 const getUnnasignedTrucks = async () => {
-  const url = "https://localhost:7048/Transport/GetUnnasignedTrucks";
+  const url = "https://sebastianrios-001-site1.mtempurl.com/Transport/GetUnnasignedTrucks";
   const response = await httpService.get(url);
   const { statusCode, content, innerException } = response;
   if (statusCode === 200) {
@@ -99,7 +99,7 @@ const getUnnasignedTrucks = async () => {
 };
 
 const getUnnasignedRoutes = async () => {
-  const url = "https://localhost:7048/Transport/GetUnnasignedRoutes";
+  const url = "https://sebastianrios-001-site1.mtempurl.com/Transport/GetUnnasignedRoutes";
   const response = await httpService.get(url);
   const { statusCode, content, innerException } = response;
   if (statusCode === 200) {
@@ -123,7 +123,7 @@ const assignRouteToTruck = async () => {
     });
     return;
   }
-  const url = "https://localhost:7048/Transport/AssignRouteToTruck";
+  const url = "https://sebastianrios-001-site1.mtempurl.com/Transport/AssignRouteToTruck";
   const data = {
     busId,
     ruteId,
@@ -148,7 +148,7 @@ const assignRouteToTruck = async () => {
 };
 
 const validateLogIn = async () => {
-  const url = "https://localhost:7048/Transport/GetLogInUsers";
+  const url = "https://sebastianrios-001-site1.mtempurl.com/Transport/GetLogInUsers";
 
   const matricula = document.getElementById("input-matricula").value;
   const password = document.getElementById("input-password").value;

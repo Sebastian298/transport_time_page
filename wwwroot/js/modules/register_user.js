@@ -31,7 +31,7 @@ const registerUserAsync = async () =>{
         });
         return;
     }
-    const url = 'https://localhost:7048/Transport/CreateUser';
+    const url = 'https://sebastianrios-001-site1.mtempurl.com/Transport/CreateUser';
     const data = {
         matricula: matricula,
         password: password

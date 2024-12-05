@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 const getAssignedRoutesAsync = async () => {
-  const url = "https://localhost:7048/Transport/GetAssignedRoutes";
+  const url = "https://sebastianrios-001-site1.mtempurl.com/Transport/GetAssignedRoutes";
   const response = await httpService.get(url);
   const { content } = response;
   $(`#route-select`).select2({
@@ -75,14 +75,14 @@ const getAssignedRoutesAsync = async () => {
 };
 
 const getDetaillRouteAsync = async (routeId) => {
-  const url = `https://localhost:7048/Transport/GetDetailRouteByRouteId?routeId=${routeId}`;
+  const url = `https://sebastianrios-001-site1.mtempurl.com/Transport/GetDetailRouteByRouteId?routeId=${routeId}`;
   const response = await httpService.get(url);
   const { content } = response;
   return content;
 };
 
 const getRouteCoordinatesToFinish = async (initialCoordinates = "") => {
-  const url = `https://localhost:7048/Transport/GetInfoForCurrentRoute?originCoordinates=${initialCoordinates}`;
+  const url = `https://sebastianrios-001-site1.mtempurl.com/Transport/GetInfoForCurrentRoute?originCoordinates=${initialCoordinates}`;
   const response = await httpService.get(url);
   const { content } = response;
   return content;
@@ -301,7 +301,7 @@ const removeRouteProgress = (routeId) => {
   };
 
 const removeRouteWithTruckAsync = async (routeId, truckId) => {
-    const url = `https://localhost:7048/Transport/RemoveTruckFromRoute?busId=${truckId}&routeId=${routeId}`;
+    const url = `https://sebastianrios-001-site1.mtempurl.com/Transport/RemoveTruckFromRoute?busId=${truckId}&routeId=${routeId}`;
     const response = await httpService.delete(url);
     return response;
 }

@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 const getRoutesAsync = async () => {
-  const url = "https://localhost:7048/Transport/GetRoutesWithCoordinates";
+  const url = "https://sebastianrios-001-site1.mtempurl.com/Transport/GetRoutesWithCoordinates";
   const response = await httpService.get(url);
   return response;
 };
